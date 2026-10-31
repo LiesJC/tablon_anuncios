@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Editar Anuncio</h2>
+<form method="POST">
+    <div class="mb-3"><label>Título</label><input type="text" name="titulo" class="form-control" value="{{ anuncio.titulo }}" required></div>
+    <div class="mb-3">
+        <label>Categoría</label>
+        <select name="categoria_id" class="form-select" required>
+            {% for c in categorias %}
+            <option value="{{ c.id }}" {% if c.id == anuncio.categoria_id %}selected{% endif %}>{{ c.nombre }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="mb-3"><label>Contenido</label><textarea name="contenido" class="form-control" rows="4" required>{{ anuncio.contenido }}</textarea></div>
+    <button type="submit" class="btn btn-primary">Actualizar</button>
+</form>
+{% endblock %}

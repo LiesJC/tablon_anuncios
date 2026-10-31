@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>{{ 'Editar' if categoria else 'Nueva' }} Categoría</h2>
+<form method="POST">
+    <div class="mb-3">
+        <label>Nombre de Categoría</label>
+        <input type="text" name="nombre" class="form-control" value="{{ categoria.nombre if categoria else '' }}" required>
+    </div>
+    <button type="submit" class="btn btn-success">Guardar</button>
+</form>
+{% endblock %}

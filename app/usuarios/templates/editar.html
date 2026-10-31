@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Editar Usuario</h2>
+<form method="POST">
+    <div class="mb-3"><label>Nombre</label><input type="text" name="nombre" class="form-control" value="{{ usuario.nombre }}" required></div>
+    <div class="mb-3"><label>Email</label><input type="email" name="email" class="form-control" value="{{ usuario.email }}" required></div>
+    <div class="mb-3"><label>Nueva Contraseña (Opcional)</label><input type="password" name="password" class="form-control"></div>
+    <button type="submit" class="btn btn-primary">Actualizar</button>
+</form>
+{% endblock %}
